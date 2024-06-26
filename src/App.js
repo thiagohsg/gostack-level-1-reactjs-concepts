@@ -23,8 +23,9 @@ function App() {
   }
 
   async function handleRemoveRepository(id) {
-    await api.delete(`respositories/${id}`);
+    await api.delete(`repositories/${id}`);
 
+    // mantenho nos meus respositórios apenas os repositórios com ID diferente do ID que foi removido. 
     setRepositories(repositories.filter(
       repository => repository.id !== id
     ))
